@@ -23,30 +23,34 @@ html(lang='pt-br')
       .singin-form
         a.text-center(href='/', style='display: block; width: 48px;height: 48px;margin: 0 auto;color: #333;')
           img(src='/img/logo/chat-60.png', alt='Chat', height='48', width='48')
-        h2.text-center.signin-title Sign in to Chat
+        h2.text-center.signin-title Join Chat
         if (message.length > 0)
           .alert.alert-danger
             span.glyphicon.glyphicon-info-sign
             |  #{message}
             a.close(data-dismiss='alert', aria-label='Close alert') &times;
-        // Login form 
-        form.well(action='/login', method='post')
+        // Sing up form 
+        h4
+          b Create your personal account
+        form.well(action='/join', method='post')
           //- username
           .form-group
             label(for='username_field') Username
             input#username_field.form-control(type='text', name='username', tabindex='1', required)
+            p.text-muted(style='font-size: 12px;') This will be your username.
+          //- email
+          .form-group
+            label(for='email_field') Email address
+            input#email_field.form-control(type='email', name='email', tabindex='2', required)
+            p.text-muted(style='font-size: 12px;') Your email address.
           //- password
           .form-group
-            label(for='password', style='display: block;') Password
-              a(href='/password_reset', style='float: right; text-decoration: none;') Forgot password?
-            input#password.form-control(type='password', name='password', tabindex='2', required)
+            label(for='password') Password
+            input#password.form-control(type='password', name='password', tabindex='3', required)
+            p.text-muted(style='font-size: 12px;') Use at least three characters.
           hr
-          button.btn-block.btn.btn-success.btn-lg(type='submit', tabindex='3') Sign in
+          button.btn-block.btn.btn-success.btn-lg(type='submit', tabindex='4') Create an account
         hr
-        p.well.well-sm.text-center
-          | New to Chat? 
-          a(href='/join') Create an account
-          | .
         .singin-footer(role='contentinfo')
           ul.singin-footer-links
             li

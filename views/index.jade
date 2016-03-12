@@ -1,5 +1,24 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // The above 3 meta tags must come first in the head; any other head content must come after these tags 
+    meta(name='author', content='Frota Silveira')
+    meta(name='description', content='Chat')
+    meta(name='keywords', content='Node, Node.js, Chat, Express, Passport')
+    title #{title} · Chat
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="/manifest.json")
+    // Bootstrap core CSS 
+    link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/bootstrap/css/bootstrap-theme.min.css', rel='stylesheet')
+    // Custom styles for this template 
+    style.
+      html { padding: 20px; margin: 20px; }
+  body
+    h1 #{title}
+    p Welcome to Express
