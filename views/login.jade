@@ -1,0 +1,65 @@
+doctype html
+html(lang='pt-br')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // The above 3 meta tags must come first in the head; any other head content must come after these tags 
+    meta(name='author', content='Frota Silveira')
+    meta(name='description', content='Chat')
+    meta(name='keywords', content='Node, Node.js, Chat, Express, Passport')
+    title #{title} · Chat
+    link(rel="icon", type="image/png", href="/favicon-32x32.png", sizes="32x32")
+    link(rel="icon", type="image/png", href="/favicon-96x96.png", sizes="96x96")
+    link(rel="icon", type="image/png", href="/favicon-16x16.png", sizes="16x16")
+    link(rel="manifest", href="/manifest.json")
+    // Bootstrap core CSS 
+    link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/bootstrap/css/bootstrap-theme.min.css', rel='stylesheet')
+    // Custom styles for this template 
+    link(rel='stylesheet', href='/css/style.css')
+  body
+    .container-fluid
+      .singin-form
+        a.text-center(href='/', style='display: block; width: 48px;height: 48px;margin: 0 auto;color: #333;')
+          img(src='/img/logo/chat-60.png', alt='Chat', height='48', width='48')
+        h2.text-center.signin-title Sign in to Chat
+        - var message = 'Oba'
+        if (message.length > 0)
+          .alert.alert-danger
+            span.glyphicon.glyphicon-info-sign
+            |  #{message}
+            a.close(data-dismiss='alert', aria-label='Close alert') &times;
+        // Login form 
+        form.well(action='/login', method='post')
+          //- username
+          .form-group
+            label(for='username') Username
+            input#username.form-control(type='text', name='username', tabindex='1')
+          //- password
+          .form-group
+            label(for='password', style='display: block;') Password
+              a(href='/password_reset', class='label-link', style='float: right; text-decoration: none;') Forgot password?
+            input#password.form-control(type='password', name='password', tabindex='2')
+          hr
+          button.btn-block.btn.btn-success.btn-lg(type='submit', tabindex='3') Sign in
+        hr
+        p.well.well-sm.text-center
+          | New to Chat? 
+          a(href='/join') Create an account
+          | .
+        .singin-footer(role='contentinfo')
+          ul.singin-footer-links
+            li
+              a(href='/') Home
+            li ·
+            li
+              a(href='/about') About
+            li ·
+            li
+              a(href='/contact') Contact
+    // Bootstrap core JavaScript 
+    // ========================================================== 
+    // Placed at the end of the document so the pages load faster 
+    script(src='/js/libs/jquery-1.12.1.min.js')
+    script(src='/bootstrap/js/bootstrap.min.js')

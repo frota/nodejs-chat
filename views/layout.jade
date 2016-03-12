@@ -1,6 +1,26 @@
 doctype html
-html
+html(lang='pt-br')
   head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // The above 3 meta tags must come first in the head; any other head content must come after these tags 
+    meta(name='author', content='Frota Silveira')
+    meta(name='description', content='Chat')
+    meta(name='keywords', content='Node, Node.js, Chat, Express, Passport')
+    title #{title} · Chat
+    //- link(rel='shortcut icon', href='/images/favicon/favicon16.png', type='image/x-icon')
+    // Bootstrap core CSS 
+    link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/bootstrap/css/bootstrap-theme.min.css', rel='stylesheet')
+    // Custom styles for this template 
+    //- link(href='/css/website.css', rel='stylesheet')
+    block jb_head
+    
+    
+    
+    
+    
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body

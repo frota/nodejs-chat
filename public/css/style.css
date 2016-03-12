@@ -1,0 +1,53 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  padding: 30px 10px 10px 10px;
+  margin-bottom: 10px;
+  background-color: #fbfbfb;
+}
+
+.singin-form  {
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.singin-form .signin-title {
+  padding: 0 10px 25px 10px;
+}
+
+.singin-form .well hr {
+  border-top: 1px solid #bbb;
+}
+
+.singin-footer {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.singin-footer-links {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.singin-footer-links li {
+  display: inline-block;
+  line-height: 16px;
+}
+
+.singin-footer-links li + li {
+  margin-left: 15px;
+}
+
+.singin-footer-links a {
+  color: #9b9b9b;
+}
