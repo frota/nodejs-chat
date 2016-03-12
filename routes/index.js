@@ -14,7 +14,7 @@ function isLoggedIn(req, res, next) {
   res.redirect('/');
 }
 
-// Route '/'
+// Routes /
 
 // GET Home page
 router.get('/', function (req, res, next) {
@@ -23,7 +23,10 @@ router.get('/', function (req, res, next) {
     user = req.user.username;
   }
 
-  res.render('index', { title: user });
+  res.render('index', {
+    title: user,
+    user: user
+  });
 });
 
 // GET Sign in page
@@ -75,17 +78,19 @@ router.get('/password_reset', function (req, res, next) {
 
 // POST Password reset
 router.post('/password_reset', function (req, res, next) {
-  var user = '';
-  if (typeof (req.user) !== 'undefined') {
-    user = req.user.username;
-  }
-
   var email_field = req.body.email;
 
   // TODO: Make password reset work
 
   req.flash('reset-message', 'Can\'t password reset yet!');
   res.redirect('/password_reset');
+});
+
+// POST Log out
+router.post('/logout', function (req, res, next) {
+  req.session.destroy();
+  req.logout();
+  res.redirect('/');
 });
 
 module.exports = router;

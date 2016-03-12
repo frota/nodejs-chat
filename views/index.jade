@@ -20,5 +20,20 @@ html(lang='pt-br')
     style.
       html { padding: 20px; margin: 20px; }
   body
-    h1 #{title}
+    h1
+      if (user.length > 0)
+        | #{title}
+      else
+        | ;)
     p Welcome to Express
+    a(href='/login') login
+    br
+    a(href='/join') join
+    br
+    a(href='/password_reset') password_reset
+    br
+    if (user.length > 0)
+      form.navbar-btn(action='/logout', method='post')
+        button.btn.btn-info.btn-md(type='submit')
+          span.glyphicon.glyphicon-log-out
+          |  Log Out

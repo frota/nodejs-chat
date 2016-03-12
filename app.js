@@ -19,11 +19,11 @@ var path            = require('path');
 
 // Routes
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var routesUser = require('./routes/user');
 
-// Variables and tests
+// Variables
 var testing = 'testing...';
-debug(testing);
+console.log('| CHAT | ' + testing);
 
 // Database connection
 var config_database = require('./controllers/database');
@@ -56,7 +56,7 @@ app.use(passport.session());
 
 // Routes
 app.use('/', routes);
-app.use('/users', users);
+app.use('/user', routesUser);
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -69,7 +69,7 @@ app.use(function(req, res, next) {
 
 // Development error handler
 if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+  app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -79,7 +79,7 @@ if (app.get('env') === 'development') {
 }
 
 // Production error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,

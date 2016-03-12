@@ -1,15 +1,13 @@
+/* jshint node: true */
+
 var LocalStrategy = require('passport-local').Strategy;
 
 var User = require('../models/user');
 
 function isValidUsername(str) {
-  var max = 32;
-
   str = String(str);
 
-  if (str[0] === '-')
-  
-  
+  var max = 32;
   var valid = /^[a-zA-Z0-9\-\_]+$/; // a-Z, 0-9, - and _
   var len = str.length;
 

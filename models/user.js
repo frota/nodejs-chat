@@ -1,3 +1,5 @@
+/* jshint node: true */
+
 var bcrypt = require('bcrypt-nodejs');
 var mongoose = require('mongoose');
 
@@ -8,7 +10,7 @@ var userSchema = mongoose.Schema({
   date: { type: Date, default: Date.now }
 });
 
-userSchema.methods.generateHash = function (password) { // password
+userSchema.methods.generateHash = function (password) {
   return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
